@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADHD Tube: the ADHD videos people keep recommending</title>
+<meta name="description" content="The YouTube videos people in ADHD communities on Reddit keep passing to each other. Ranked by how many different people recommended them, not by an algorithm.">
+<link rel="canonical" href="https://adhdtube.org/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ADHD Tube">
+<meta property="og:url" content="https://adhdtube.org/">
+<meta property="og:title" content="ADHD Tube: the ADHD videos people keep recommending">
+<meta property="og:description" content="Too much ADHD content online? These are the YouTube videos people in 15 ADHD communities recommended again and again. Ranked by people, not an algorithm.">
+<meta property="og:image" content="https://adhdtube.org/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ADHD Tube: the ADHD videos people keep recommending">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ADHD Tube: the ADHD videos people keep recommending">
+<meta name="twitter:description" content="549 YouTube videos ADHD communities keep recommending. Ranked by people, not an algorithm.">
+<meta name="twitter:image" content="https://adhdtube.org/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#f3f5f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141a18" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f5f2; --surface:#ffffff; --ink:#17211e; --muted:#56615c; --line:#dde3de; --line-strong:#bfc9c2;
+  --accent:#0e6b61; --accent-ink:#fff; --accent-soft:#dcefeb; --spark:#f5c84c; --hl:#ffe17a;
+  --solid:#2f5d8a; --solid-soft:#e5edf6; --life:#6b4b8c; --life-soft:#efe8f5; --warn:#8a5a00; --warn-soft:#fbefd6;
+  --radius:12px; --fs:18px; --shadow:0 1px 2px rgba(35,32,27,.06),0 8px 24px -12px rgba(35,32,27,.18);
+  --ease-out:cubic-bezier(.22,1,.36,1); --spring:cubic-bezier(.34,1.36,.64,1);
+}
+[data-theme="dark"]{
+  --bg:#141a18; --surface:#1c2421; --ink:#e7eeea; --muted:#9fb0a8; --line:#2c3833; --line-strong:#3f4d47;
+  --accent:#6fc2b9; --accent-ink:#0f201e; --accent-soft:#1f3532; --spark:#f0b85e;
+  --solid:#9dc0e6; --solid-soft:#1e2935; --life:#cbb3e8; --life-soft:#2b2435; --warn:#f0c26a; --warn-soft:#382e1a;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6);
+}
+[data-size="large"]{--fs:21px}
+*{box-sizing:border-box}
+::selection{background:var(--hl);color:#17211e}
+html{accent-color:var(--accent);caret-color:var(--accent);scrollbar-color:var(--line-strong) transparent}
+html{font-size:var(--fs);scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible Next","Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:8px}
+
+/* Hero */
+header.hero{padding:40px 0 18px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start}
+.brand-mark{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.95rem;margin:0 0 18px}
+.brand-mark svg{display:block}
+.eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-weight:700}
+h1{font-weight:800;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.04;margin:0;letter-spacing:-.03em;max-width:22ch;text-wrap:balance}
+@media (min-width:1040px){.hero-main{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);column-gap:48px;align-items:start}.hero-main .brand-mark,.hero-main h1{grid-column:1/-1}.hero-main .lede{margin-top:18px}.hero-main .facts{margin-top:18px;padding-left:24px;border-left:1px solid var(--line)}}
+.lede{margin:12px 0 0;color:var(--muted);max-width:58ch;font-size:1.02rem}
+.lede b{color:var(--ink);font-weight:700}
+.facts{list-style:none;margin:20px 0 0;padding:0;max-width:66ch;display:flex;flex-direction:column;gap:8px;font-size:.95rem;color:var(--muted)}
+.facts b{color:var(--ink)}
+.about{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 40px}
+.about h3{font-size:.95rem;color:var(--ink);margin:14px 0 4px}
+.about p{margin:0 0 6px}
+@media (max-width:720px){.about{grid-template-columns:1fr}}
+.proof{display:flex;flex-wrap:wrap;gap:6px 18px;margin:14px 0 0;padding:0;list-style:none;font-size:.85rem;color:var(--muted)}
+.proof b{color:var(--ink);font-variant-numeric:tabular-nums}
+.comfort{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.pill{font:inherit;font-size:.78rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;cursor:pointer;min-height:36px;transition:background .15s,border-color .15s}
+.pill[aria-pressed="true"]{border-color:var(--ink)}
+a.pill{text-decoration:none;display:inline-flex;align-items:center}
+@media (max-width:720px){header.hero{grid-template-columns:1fr}.comfort{justify-content:flex-start}}
+
+/* Classics */
+.section-h{display:flex;align-items:baseline;gap:10px;margin:26px 0 12px}
+.section-h h2{font-size:1.35rem;margin:0;font-weight:800;letter-spacing:-.01em}
+.section-h p{margin:0;color:var(--muted);font-size:.9rem}
+.classics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:900px){.classics{grid-template-columns:1fr}}
+.classic{position:relative;border-radius:var(--radius);overflow:hidden;background:#111;color:#fff;min-height:220px;display:flex;align-items:flex-end;text-decoration:none;box-shadow:var(--shadow);isolation:isolate}
+.classic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .5s var(--ease-out)}
+.classic::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.55) 40%,rgba(0,0,0,.9))}
+.classic .in{padding:16px 18px}
+.classic .n{font-size:2.2rem;font-weight:800;line-height:1;color:var(--hl)}
+.classic .t{font-weight:700;line-height:1.3;margin:6px 0 4px}
+.classic .s{font-size:.8rem;opacity:.85}
+
+/* Filter bar */
+.bar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s;margin:26px -20px 0;padding:12px 20px}
+.bar.stuck{border-color:var(--line);box-shadow:0 6px 18px -14px rgba(0,0,0,.35)}
+.bar-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.bar-row + .bar-row{margin-top:10px}
+.search{flex:1 1 240px;position:relative}
+.search input{width:100%;font:inherit;font-size:.92rem;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);border-radius:12px;padding:10px 14px 10px 38px;min-height:46px}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);opacity:.55}
+.seg{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:3px;gap:2px;flex-wrap:wrap}
+.seg button{font:inherit;font-size:.84rem;border:0;background:transparent;color:var(--ink);border-radius:9px;padding:7px 11px;cursor:pointer;min-height:38px;transition:background .15s,color .15s}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.seg button:active,.chip:active,.btn:active,.pill:active{transform:scale(.97)}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent)}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;font:inherit;font-size:.86rem;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:7px 13px;cursor:pointer;min-height:40px;transition:background .15s,color .15s,border-color .15s,transform .1s}
+.chip .c{color:var(--muted);font-size:.78rem;margin-left:4px;font-variant-numeric:tabular-nums}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.chip[aria-pressed="true"] .c{color:inherit;opacity:.8}
+.btn{font:inherit;font-weight:700;border:0;border-radius:12px;padding:11px 18px;cursor:pointer;min-height:46px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:transform .1s,background .15s,box-shadow .15s}
+.btn.primary{background:var(--accent);color:var(--accent-ink);box-shadow:0 6px 16px -8px color-mix(in srgb,var(--accent) 80%,transparent)}
+.btn.ghost{background:var(--surface);border:1px solid var(--line);color:var(--ink);font-weight:400}
+.right{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.count{color:var(--muted);font-size:.85rem;font-variant-numeric:tabular-nums}
+label.check{display:inline-flex;gap:8px;align-items:center;font-size:.85rem;color:var(--muted);cursor:pointer}
+label.check input{width:18px;height:18px;accent-color:var(--accent)}
+
+/* Grid + cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px;margin:18px 0 24px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .25s var(--ease-out),opacity .2s}
+.card:hover{border-color:var(--line-strong);box-shadow:var(--shadow)}
+.card.seen{opacity:.72}
+.thumbwrap{position:relative;display:block;aspect-ratio:16/9;background:var(--line);overflow:hidden}
+.thumb{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s var(--ease-out)}
+
+.badge{position:absolute;font-size:.74rem;padding:2px 8px;border-radius:6px;font-variant-numeric:tabular-nums}
+.len{right:8px;bottom:8px;background:rgba(18,16,14,.84);color:#fff}
+.seenb{left:8px;top:8px;background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:7px;flex:1}
+.title{font-weight:700;font-size:.98rem;line-height:1.35;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.title a{text-decoration:none}
+.title a:hover{text-decoration:underline;text-underline-offset:3px}
+.by{color:var(--muted);font-size:.8rem}
+.blurb{font-size:.88rem;margin:0;color:var(--ink)}
+.row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tag{font-size:.72rem;padding:3px 9px;border-radius:999px;font-weight:700}
+.tag.solid{background:var(--solid-soft);color:var(--solid)}
+.tag.personal{background:var(--life-soft);color:var(--life)}
+.tag.caution{background:var(--warn-soft);color:var(--warn)}
+.note{font-size:.78rem;color:var(--warn)}
+.meter{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--muted)}
+.meter .track{flex:0 0 64px;height:6px;border-radius:6px;background:var(--line);overflow:hidden}
+.meter .fill{display:block;height:100%;background:var(--accent);border-radius:6px}
+.meter b{color:var(--ink)}
+details{font-size:.84rem;color:var(--muted)}
+summary{cursor:pointer;color:var(--ink);list-style:none;display:inline-flex;gap:6px;align-items:center;min-height:32px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .2s var(--ease-out)}
+details[open] summary::before{transform:rotate(45deg)}
+blockquote{margin:6px 0 0;padding-left:10px;border-left:3px solid var(--line-strong)}
+.actions{display:flex;gap:8px;margin-top:auto;padding-top:6px}
+.actions .btn{padding:8px 14px;min-height:42px;font-size:.86rem}
+.save[aria-pressed="true"]{border-color:var(--spark);background:color-mix(in srgb,var(--spark) 14%,var(--surface))}
+.save.pop{animation:pop .35s var(--spring)}
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.08)}100%{transform:scale(1)}}
+.more{display:flex;justify-content:center;margin:6px 0 40px}
+.empty{grid-column:1/-1;padding:48px 20px;text-align:center;color:var(--muted)}
+.empty b{display:block;color:var(--ink);font-size:1.05rem;margin-bottom:6px}
+
+/* Entrance on filter change only */
+.grid.enter .card{animation:rise .38s var(--ease-out) both;animation-delay:calc(var(--i) * 28ms)}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* Pick dialog */
+dialog{border:0;padding:0;background:transparent;max-width:min(860px,94vw);width:100%;color:var(--ink)}
+dialog::backdrop{background:rgba(20,18,15,.48);backdrop-filter:blur(3px)}
+dialog[open]{animation:dlg .42s var(--spring)}
+dialog[open]::backdrop{animation:fade .25s ease-out}
+@keyframes dlg{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}}
+.sheet{background:var(--surface);border-radius:22px;overflow:hidden;box-shadow:0 30px 80px -20px rgba(0,0,0,.5)}
+.sheet .thumbwrap{aspect-ratio:16/9;max-height:44vh;width:100%}
+dialog .sheet{max-height:92vh;overflow:auto}
+.sheet .body{padding:20px 22px 22px;gap:9px}
+.sheet .title{font-size:1.25rem;-webkit-line-clamp:4}
+.sheet-top{display:flex;justify-content:space-between;align-items:center;padding:12px 14px 12px 22px;border-bottom:1px solid var(--line)}
+.sheet-top span{font-weight:700}
+.x{font:inherit;border:0;background:transparent;color:var(--ink);font-size:1.4rem;line-height:1;width:44px;height:44px;border-radius:10px;cursor:pointer}
+.swap{animation:swap .3s var(--ease-out)}
+@keyframes swap{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+
+/* Toast */
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,140%);background:var(--ink);color:var(--bg);border-radius:12px;padding:10px 10px 10px 16px;display:flex;gap:12px;align-items:center;font-size:.88rem;box-shadow:var(--shadow);transition:transform .35s var(--spring);z-index:50}
+.toast.on{transform:translate(-50%,0)}
+.toast button{font:inherit;font-weight:700;background:transparent;color:var(--spark);border:0;cursor:pointer;min-height:36px;padding:0 8px}
+
+footer{border-top:1px solid var(--line);padding:26px 0 56px;color:var(--muted);font-size:.85rem;margin-top:10px}
+footer h2{font-size:1rem;color:var(--ink);margin:0 0 6px}
+footer p{max-width:74ch}
+
+
+@media (max-width:720px){
+  .bar{position:static;margin:20px 0 0;padding:0;background:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .seg{flex-wrap:nowrap;overflow-x:auto;max-width:100%;scrollbar-width:none}
+  .seg button{flex:none}
+  #pickBtn{width:100%;justify-content:center}
+  .classic{min-height:200px}
+  .section-h{flex-direction:column;align-items:flex-start;gap:2px}
+  .classic::before{background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.8) 45%,rgba(0,0,0,.92))}
+  .classic .n{font-size:1.8rem}
+}
+@media (prefers-contrast:more){:root{--muted:#3d3832;--line:#9c9282;--line-strong:#6f6656}[data-theme="dark"]{--muted:#d6cfc4;--line:#6a6255}}
+@media (forced-colors:active){.chip[aria-pressed="true"],.seg button[aria-pressed="true"]{outline:2px solid CanvasText}.meter .fill{background:Highlight}}
+/* Motion dial + OS preference */
+[data-motion="off"] *, [data-motion="off"] *::before, [data-motion="off"] *::after{animation:none!important;transition:none!important}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}}
+[data-motion="off"] </style>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="hero-main">
+    <p class="brand-mark"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="var(--accent)"/><path d="M9.5 7.5v9l7-4.5z" fill="var(--hl)"/></svg>ADHD Tube</p>
+        <h1>The ADHD videos people keep recommending</h1>
+    <p class="lede">Search ADHD online and you get hot takes, trend videos, ads, myths, and clinical guidelines written for other clinicians. We read <b id="ledeComments">287,086</b> comments in <b id="ledeSubs">15</b> ADHD communities on Reddit and kept the YouTube videos people sent each other again and again, from 2012 to now.</p>
+    <ul class="facts">
+      <li><b>How it's ranked.</b> By how many different people recommended each video. Views, ads and YouTube's algorithm don't count.</li>
+      <li><b>Labels.</b> Each video is marked Expert, Lived experience or Check the claims, since a popular video can still be wrong.</li>
+      <li><b>Privacy.</b> No sign-up, no cookies, no tracking of who you are. Your saved and watched lists stay on this device.</li>
+    </ul>
+  </div>
+  <div class="comfort" aria-label="Comfort settings">
+    <button class="pill" id="sizeBtn" aria-pressed="false">Larger text</button>
+    <button class="pill" id="themeBtn" aria-pressed="false">Dark</button>
+    <button class="pill" id="motionBtn" aria-pressed="false">Less motion</button>
+    <a class="pill" href="https://tally.so/r/Nqrj2G" target="_blank" rel="noopener">Suggest a video</a>
+  </div>
+</header>
+
+<section aria-labelledby="classicsH">
+  <div class="section-h"><h2 id="classicsH">The classics</h2><p>Most recommended, start here</p></div>
+  <div class="classics" id="classics"></div>
+</section>
+
+<div class="bar" id="bar">
+  <div class="bar-row">
+    <div class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <label class="sr" for="q">Search titles and channels</label><input id="q" type="search" placeholder="Search a title or channel  ( / )" autocomplete="off"></div>
+    <div class="seg" role="group" aria-label="How much time do you have" id="timeSeg"></div>
+    <button class="btn primary" id="pickBtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>Pick one for me</button>
+  </div>
+  <div class="bar-row">
+    <div class="chips" role="group" aria-label="Topic" id="topicChips"></div>
+  </div>
+  <div class="bar-row">
+    <label class="check"><input type="checkbox" id="hideSeen"> Hide what I've watched</label>
+    <div class="right"><span class="count" id="count" aria-live="polite"></span><button class="btn ghost" id="savedBtn" aria-pressed="false">Saved (0)</button></div>
+  </div>
+</div>
+
+<main class="grid" id="grid"></main>
+<div class="more"><button class="btn ghost" id="moreBtn">Show 24 more</button></div>
+
+<footer>
+  <h2 style="font-size:1.35rem;font-weight:800">About ADHD Tube</h2>
+  <div class="about">
+    <div>
+      <h3>What this is</h3>
+      <p>A shortlist of YouTube videos about ADHD that people in ADHD communities kept sharing with each other. It works like a filter that counts thousands of people's "watch this one" comments.</p>
+      <h3>Where it comes from</h3>
+      <p id="method"></p>
+      <h3>How videos are ranked</h3>
+      <p>By the number of different people who recommended a video, and across how many separate threads. Each person counts once per video, so one keen fan can't push a video up. Views, likes and YouTube's algorithm play no part.</p>
+    </div>
+    <div>
+      <h3>What the labels mean</h3>
+      <p><b>Expert</b>: from a clinician or researcher, or based on mainstream research. <b>Lived experience</b>: people sharing their own ADHD life. <b>Check the claims</b>: the video makes contested claims or sells something. An AI model wrote these labels and the one-line summaries from each video's title, description and comments, so they can be wrong.</p>
+      <h3>What this isn't</h3>
+      <p>It isn't medical advice, and a popular video isn't automatically a correct one. For diagnosis or treatment, talk to your own clinician. Videos belong to their creators and play on YouTube. This site isn't connected to YouTube, Reddit or the creators.</p>
+      <h3>Feedback</h3>
+      <p>Know a video that should be here, or one that shouldn't? <a href="https://tally.so/r/Nqrj2G" target="_blank" rel="noopener">Send a suggestion or feedback</a>. It takes a minute and you don't need to give your name.</p>
+      <h3>Privacy and open data</h3>
+      <p>Your saved and watched lists stay in this browser. We count visits anonymously with Vercel Web Analytics: no cookies, no personal data. <a href="/adhd-tube-dataset.zip" download>Download the full list</a> as a spreadsheet (counts and labels only, no usernames or comments).</p>
+    </div>
+  </div>
+</footer>
+</div>
+
+<dialog id="pick" aria-labelledby="pickH"><div class="sheet">
+  <div class="sheet-top"><span id="pickH">Here's one for you</span><button class="x" id="closePick" aria-label="Close">&times;</button></div>
+  <div id="pickBody"></div>
+</div></dialog>
+<div class="toast" id="toast" role="status"><span id="toastMsg"></span><button id="toastUndo">Undo</button></div>
+
+<script>
+const DATA = /*DATA*/;
+const TOPICS = [["all","Everything"],["understanding","Understanding ADHD"],["women","Women & late diagnosis"],["daily-life","Daily life"],["relationships","Relationships & family"],["treatment-science","Treatment & science"],["work-study","Work & study"],["laughs","Laughs"]];
+const TIMES = [["any","Any length",0,1e9],["5","≤ 5 min",0,330],["15","≤ 15 min",0,960],["30","≤ 30 min",0,1860],["long","Long watch",1860,1e9]];
+const EV = {solid:["solid","Expert"], personal:["personal","Lived experience"], caution:["caution","Check the claims"]};
+const KEY='adhdwatchlist:';
+const store = { get(k,d){ try{const v=localStorage.getItem(KEY+k) ?? localStorage.getItem('madeitclick:'+k) ?? localStorage.getItem('adhdtube:'+k); return v==null?d:JSON.parse(v)}catch{return d} }, set(k,v){ try{localStorage.setItem(KEY+k, JSON.stringify(v))}catch{} } };
+const hash = new URLSearchParams(location.hash.slice(1));
+const state = { topic: hash.get('topic')||store.get('topic','all'), time: hash.get('time')||store.get('time','any'), q:'', saved:new Set(store.get('saved',[])), seen:new Set(store.get('seen',[])), hideSeen:store.get('hideSeen',false), onlySaved:false, shown:24 };
+const $ = s => document.querySelector(s);
+const esc = s => String(s??'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = s => { if(!s) return ''; const h=Math.floor(s/3600), m=Math.floor(s%3600/60), x=s%60; return h? `${h}:${String(m).padStart(2,'0')}:${String(x).padStart(2,'0')}` : `${m}:${String(x).padStart(2,'0')}` };
+const MAXR = Math.max(...DATA.videos.map(v=>v.r));
+const yt = id => `https://www.youtube.com/watch?v=${id}`;
+const track = (name, data) => { try { window.va && window.va('event', { name, data }); } catch {} };
+const motionOK = () => document.documentElement.dataset.motion!=='off' && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function inTime(v,t){ const [, , lo, hi] = TIMES.find(x=>x[0]===t); return t==='any' || (v.s && v.s>lo && v.s<=hi); }
+function matches(v, {topic=state.topic, time=state.time}={}){
+  const q = state.q.trim().toLowerCase();
+  return (topic==='all'||v.topic===topic) && inTime(v,time)
+    && (!q || (v.t+' '+v.c).toLowerCase().includes(q))
+    && (!state.hideSeen || !state.seen.has(v.id)) && (!state.onlySaved || state.saved.has(v.id));
+}
+const filtered = () => DATA.videos.filter(v=>matches(v));
+
+function renderControls(){
+  $('#timeSeg').innerHTML = TIMES.map(([k,l]) => `<button data-time="${k}" aria-pressed="${state.time===k}">${l}</button>`).join('');
+  $('#topicChips').innerHTML = TOPICS.map(([k,l]) => { const n = DATA.videos.filter(v=>matches(v,{topic:k})).length;
+    return `<button class="chip" data-topic="${k}" aria-pressed="${state.topic===k}">${l}<span class="c">${n}</span></button>`; }).join('');
+}
+function meter(v){ const pct = Math.max(6, Math.round(Math.sqrt(v.r/MAXR)*100));
+  return `<div class="meter" title="Recommended by ${v.r} different people in ${v.th} threads"><span class="track"><span class="fill" style="width:${pct}%"></span></span><span><b>${v.r}</b> ${v.r===1?'person':'people'} recommended</span></div>`; }
+function card(v,i=0){
+  const ev = EV[v.ev]||EV.personal, saved=state.saved.has(v.id), seen=state.seen.has(v.id);
+  return `<article class="card${seen?' seen':''}" style="--i:${Math.min(i,12)}">
+    <a class="thumbwrap" href="${yt(v.id)}" target="_blank" rel="noopener" data-watch="${v.id}" tabindex="-1" aria-hidden="true">
+      <img class="thumb" loading="lazy" alt="" src="https://i.ytimg.com/vi/${v.id}/hq2.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${v.id}/hqdefault.jpg'">
+      ${v.s?`<span class="badge len">${fmt(v.s)}</span>`:''}${seen?'<span class="badge seenb">Watched</span>':''}
+    </a>
+    <div class="body">
+      <h3 class="title"><a href="${yt(v.id)}" target="_blank" rel="noopener" data-watch="${v.id}">${esc(v.t)}</a></h3>
+      <div class="by">${esc(v.c)}${v.y?`, ${v.y}`:''}</div>
+      ${v.b?`<p class="blurb">${esc(v.b)}</p>`:''}
+      <div class="row"><span class="tag ${ev[0]}">${ev[1]}</span>${v.ev==='caution'&&v.cn?`<span class="note">${esc(v.cn)}</span>`:''}</div>
+      ${meter(v)}
+      ${v.q?`<details><summary>What people said</summary><blockquote>"${esc(v.q)}${v.q.length>=220?'…':''}"</blockquote></details>`:''}
+      <div class="actions">
+        <a class="btn primary" href="${yt(v.id)}" target="_blank" rel="noopener" data-watch="${v.id}">Watch<span class="sr"> ${esc(v.t)} on YouTube</span></a>
+        <button class="btn ghost save" data-save="${v.id}" aria-pressed="${saved}">${saved?'Saved':'Save for later'}</button>
+      </div>
+    </div></article>`;
+}
+function render({animate=false}={}){
+  const list = filtered();
+  const g = $('#grid');
+  g.innerHTML = list.length ? list.slice(0,state.shown).map((v,i)=>card(v,i)).join('')
+    : `<div class="empty"><b>Nothing matches yet.</b>Try a longer time, another topic${state.q?', or a different search':''}.</div>`;
+  g.classList.remove('enter'); if (animate && motionOK()) { void g.offsetWidth; g.classList.add('enter'); }
+  $('#count').textContent = `${list.length} video${list.length===1?'':'s'}`;
+  $('#moreBtn').style.display = list.length > state.shown ? '' : 'none';
+  $('#savedBtn').textContent = state.onlySaved ? 'Show all' : `Saved (${state.saved.size})`;
+  $('#savedBtn').setAttribute('aria-pressed', state.onlySaved);
+  renderControls();
+  history.replaceState(null,'', (state.topic!=='all'||state.time!=='any') ? `#topic=${state.topic}&time=${state.time}` : location.pathname);
+}
+function renderClassics(){
+  $('#classics').innerHTML = DATA.videos.slice(0,3).map((v,i)=>`<a class="classic" href="${yt(v.id)}" target="_blank" rel="noopener" data-watch="${v.id}">
+    <img alt="" src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg"><div class="in"><div class="n">${i+1}</div>
+    <div class="t">${esc(v.t)}</div><div class="s">${v.r} people recommended, ${fmt(v.s)}</div></div></a>`).join('');
+}
+
+let lastPick=null;
+function pick(){
+  const list = filtered().filter(v=>!state.seen.has(v.id) && v.id!==lastPick);
+  const strong = list.filter(v=>v.r>=2); const base = strong.length>=5 ? strong : list;
+  const pool = base.slice(0, Math.max(30, Math.floor(base.length/2)));
+  const body = $('#pickBody'), dlg = $('#pick');
+  if(!pool.length){ body.innerHTML = `<div class="empty"><b>You've watched everything here.</b>Try another topic or a longer time.</div>`; }
+  else { const v = pool[Math.floor(Math.random()*pool.length)]; lastPick=v.id;
+    body.innerHTML = `<div class="swap">${card(v)}</div>`;
+    const acts = body.querySelector('.actions'); acts.insertAdjacentHTML('beforeend', `<button class="btn ghost" id="again">Another one</button>`);
+    $('#again').onclick = pick; }
+  if(!dlg.open) dlg.showModal();
+}
+$('#closePick').onclick = () => $('#pick').close();
+$('#pick').addEventListener('click', e => { if (e.target.id==='pick') $('#pick').close(); });
+
+let toastT, undoFn;
+function toast(msg, undo){ const tEl=$('#toast'), dlg=$('#pick'); (dlg.open? dlg : document.body).appendChild(tEl); $('#toastMsg').textContent = msg; undoFn = undo; $('#toastUndo').style.display = undo?'':'none';
+  $('#toast').classList.add('on'); clearTimeout(toastT); toastT = setTimeout(()=>$('#toast').classList.remove('on'), 4000); }
+$('#toastUndo').onclick = () => { undoFn && undoFn(); $('#toast').classList.remove('on'); };
+
+function toggleSave(id){
+  const had = state.saved.has(id); had ? state.saved.delete(id) : state.saved.add(id); store.set('saved',[...state.saved]);
+  document.querySelectorAll(`[data-save="${id}"]`).forEach(b=>{ b.setAttribute('aria-pressed', !had); b.textContent = had?'Save for later':'Saved'; b.classList.remove('pop'); if(!had && motionOK()){ void b.offsetWidth; b.classList.add('pop'); } });
+  $('#savedBtn').textContent = state.onlySaved ? 'Show all' : `Saved (${state.saved.size})`;
+  toast(had ? 'Removed from saved' : 'Saved for later', () => toggleSave(id));
+  if (state.onlySaved && had) render();
+}
+document.addEventListener('click', e => {
+  const w = e.target.closest('[data-watch]'); if (w){ const id=w.dataset.watch; track('watch', { id }); if(!state.seen.has(id)){ state.seen.add(id); store.set('seen',[...state.seen]); document.querySelectorAll(`[data-watch="${id}"]`).forEach(a=>a.closest('.card')?.classList.add('seen')); } }
+  const s = e.target.closest('[data-save]'); if (s) toggleSave(s.dataset.save);
+  const t = e.target.closest('[data-time]'); if (t){ state.time=t.dataset.time; store.set('time',state.time); state.shown=24; render({animate:true}); }
+  const c = e.target.closest('[data-topic]'); if (c){ state.topic=c.dataset.topic; store.set('topic',state.topic); state.shown=24; render({animate:true}); }
+});
+let qT; $('#q').addEventListener('input', e => { clearTimeout(qT); qT=setTimeout(()=>{ state.q=e.target.value; state.shown=24; render(); }, 120); });
+document.addEventListener('keydown', e => { if (e.key==='/' && document.activeElement.tagName!=='INPUT'){ e.preventDefault(); $('#q').focus(); } });
+$('#moreBtn').onclick = () => { state.shown += 24; render(); };
+$('#pickBtn').onclick = () => { track('pick'); pick(); };
+$('#savedBtn').onclick = () => { state.onlySaved=!state.onlySaved; state.shown=24; render({animate:true}); };
+$('#hideSeen').checked = state.hideSeen; $('#hideSeen').onchange = e => { state.hideSeen=e.target.checked; store.set('hideSeen',state.hideSeen); render({animate:true}); };
+new IntersectionObserver(([en]) => $('#bar').classList.toggle('stuck', en.intersectionRatio<1), {threshold:[1], rootMargin:'-1px 0px 0px 0px'}).observe($('#bar'));
+
+function applyComfort(){ const d=document.documentElement; d.dataset.theme=store.get('theme', matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'); d.dataset.size=store.get('size','normal'); d.dataset.motion=store.get('motion','on');
+  $('#themeBtn').textContent = d.dataset.theme==='dark'?'Light':'Dark'; $('#sizeBtn').setAttribute('aria-pressed', d.dataset.size==='large'); $('#motionBtn').setAttribute('aria-pressed', d.dataset.motion==='off'); }
+$('#themeBtn').onclick = () => { store.set('theme', document.documentElement.dataset.theme==='dark'?'light':'dark'); applyComfort(); };
+$('#sizeBtn').onclick = () => { store.set('size', store.get('size','normal')==='large'?'normal':'large'); applyComfort(); };
+$('#motionBtn').onclick = () => { store.set('motion', store.get('motion','on')==='off'?'on':'off'); applyComfort(); };
+applyComfort();
+
+const st = DATA.stats;
+$('#ledeComments').textContent = st.comments.toLocaleString(); $('#ledeSubs').textContent = st.subs.length;
+$('#method').textContent = `${st.comments.toLocaleString()} public comments in ${st.trees.toLocaleString()} Reddit threads from ${st.subs.length} ADHD communities (${st.subs.map(x=>'r/'+x).join(', ')}), posted between 2012 and 2026. We pulled out every YouTube link, removed videos that are deleted or private, and kept the ${st.videos} that are about ADHD. Last updated ${st.built}.`;
+renderClassics(); render();
+</script>
+</body>
+</html>
