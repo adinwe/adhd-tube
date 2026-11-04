@@ -145,7 +145,8 @@ summary::-webkit-details-marker{display:none}
 summary::before{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .2s var(--ease-out)}
 details[open] summary::before{transform:rotate(45deg)}
 blockquote{margin:6px 0 0;padding-left:10px;border-left:3px solid var(--line-strong)}
-.actions{display:flex;gap:8px;margin-top:auto;padding-top:6px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+.actions .btn{white-space:nowrap}
 .actions .btn{padding:8px 14px;min-height:42px;font-size:.86rem}
 .save[aria-pressed="true"]{border-color:var(--spark);background:color-mix(in srgb,var(--spark) 14%,var(--surface))}
 .save.pop{animation:pop .35s var(--spring)}
